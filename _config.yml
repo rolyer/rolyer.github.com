@@ -1,4 +1,5 @@
 # visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
+# visit Font-Awesome(http://fortawesome.github.io/Font-Awesome/) for more icons
 
 paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
@@ -6,7 +7,7 @@ exclude: ["README.md"] # files to exclude
 highlighter: pygments
 markdown: kramdown
 disqus: rolyer
-google_analytics: rolyer
+google_analytics:
 
 defaults:
   -
@@ -17,12 +18,13 @@ defaults:
 
 description: Stylish Jekyll Theme
 author:
-  name: Rolyer
-  email: irolyer@gmail.com
+  name: Rolyer Luo
+  email:
   github: rolyer
   twitter: rolyer
   pinterest: rolyer
   linkedin: rolyer
+  weibo: rolyer
   bio: This's My Tech Blog!
   email_md5: 1320f268fa9429e2cf2d62abc7f835e3
 
