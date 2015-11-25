@@ -14,6 +14,7 @@ comments: true
 * 用cmd打开命令窗口，转到解压的目录，输入 “memcached -d install”,查看是否安装成功，输入memcached –h，出现下图窗口说明已经安装成功。
   如果在没有安装过的情况下，出现"failed to install service or service already installed"错误，可能是cmd.exe需要用管理员身份运行。
 
+
 {% highlight bash %}
 memcached -d install
 memcached –h
