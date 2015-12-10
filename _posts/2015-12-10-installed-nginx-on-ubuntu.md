@@ -124,3 +124,4 @@ apt-get install nginx
 
 Nginx相关配置：
 请参考文章[Nginx配置及说明](https://rolyer.github.io/general/nginx/2015/12/10/nginx-configuration.html)
+
