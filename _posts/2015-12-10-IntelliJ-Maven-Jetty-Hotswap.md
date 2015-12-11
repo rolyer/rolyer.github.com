@@ -46,8 +46,11 @@ comments: true
 
 - 执行mvn jetty:run运行项目（DEBUG使用：mvnDebug jetty:run）
 
+使用“-Plocal”指定profile
+
 {% highlight bash %}
-mvn jetty:run
+cd steel-cbms\cbms-web
+mvn jetty:run -Plocal
 {% endhighlight bash %}
 
 - 修改Java代码好后Ctrl+Shift+F9编译代码。如果是项目的配置jetty plugin能够自动检测到，并自动重新加载配置文件。
@@ -65,3 +68,7 @@ mvn jetty:run
 [INFO] No Transaction manager found - if your webapp requires one, please configure one.
 [INFO] Initializing Spring root WebApplicationContext
 {% endhighlight bash %}
+
+> 如果相关依赖包下载不到，请使用VPN。
+
+参考：[jetty-maven-plugin](http://www.eclipse.org/jetty/documentation/current/jetty-maven-plugin.html)
