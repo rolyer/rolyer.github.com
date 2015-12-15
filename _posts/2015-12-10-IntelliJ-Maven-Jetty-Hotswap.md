@@ -28,6 +28,7 @@ comments: true
 			<artifactId>maven-jetty-plugin</artifactId>
 			<version>6.1.26</version>
 			<configuration>
+				<webAppSourceDirectory>${project.basedir}/src/main/webapp</webAppSourceDirectory>
 				<connectors>
 					<connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
 						<port>8000</port>
