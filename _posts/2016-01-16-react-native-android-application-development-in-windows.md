@@ -21,6 +21,8 @@ comments: true
 
 设置环境变量PATH：例如：（PATH => %ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools）
 
+注：创建相应模拟器后面需求运行并安装APK。Windows下使用cygwin。
+
 # 安装React-native-cli
 
 {% highlight bash %}
@@ -32,7 +34,7 @@ npm install -g react-native-cli
 {% highlight bash %}
 react-native init reactNative
 {% endhighlight bash %}
-> 输出
+> 输出信息：
 {% highlight bash %}
 This will walk you through creating a new React Native project in C:\dev\react
 Installing react-native package from npm...
@@ -45,3 +47,68 @@ To run your app on Android:
    cd C:\dev\react
    react-native run-android
 {% endhighlight bash %}
+
+# 运行packager
+
+{% highlight bash %}
+npm start
+{% endhighlight bash %}
+
+可以用浏览器访问http://localhost:8081/index.android.bundle?platform=android看看是否可以看到打包后的脚本
+
+
+# 在Android中运行
+
+{% highlight bash %}
+react-native run-android
+{% endhighlight bash %}
+
+App运行成功截屏如下：
+
+![Welcome to React Native]({{ site.BASE_PATH }}/assets/media/Welcome-to-React-Native-Screenshots.jpg)
+
+
+# 安卓调试
+
+目前Windows下无法自动打开chrome进行调试，所以手动打开chrome，访问如下地址：http://localhost:8081/debugger-ui 即可。
+
+
+# 错误记录
+
+> 错误1：No connected devices!
+
+{% highlight bash %}
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:installDebug'.
+> com.android.builder.testing.api.DeviceException: No connected devices!
+
+* Try:
+Run with --stacktrace option to get the stack trace. Run with --info or --debug                                                                      option to get more log output.
+
+BUILD FAILED
+{% endhighlight bash %}
+
+解决方法：开启AVD模拟器
+
+> 错误2：Watcher took too long to load
+
+{% highlight bash %}
+React packager ready.
+
+ ERROR  Watcher took too long to load
+Try running `watchman version` from your terminal
+https://facebook.github.io/watchman/docs/troubleshooting.html
+Error: Watcher took too long to load
+Try running `watchman version` from your terminal
+https://facebook.github.io/watchman/docs/troubleshooting.html
+    at [object Object]._onTimeout (index.js:103:16)
+    at Timer.listOnTimeout (timers.js:92:15)
+
+See http://facebook.github.io/react-native/docs/troubleshooting.html
+for common problems and solutions.
+
+{% endhighlight bash %}
+
+解决方法：如果你碰到了ERROR Watcher took too long to load的报错，请尝试将这个文件中的MAX_WAIT_TIME值改得更大一些 (文件的具体路径是node_modules\react-native\packager\react-packager\src\DependencyResolver\FileWatcher\index.js或node_modules/react-native/packager/react-packager/src/FileWatcher/index.js)。[参考](http://reactnative.cn/docs/linux-windows-support.html#content)
