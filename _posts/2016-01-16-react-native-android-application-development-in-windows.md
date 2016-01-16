@@ -1,38 +1,38 @@
 ---
 layout: post
-title: ÔÚWindowsÏÂ´î½¨React Native Android¿ª·¢»·¾³
+title: åœ¨Windowsä¸‹æ­å»ºReact Native Androidå¼€å‘çŽ¯å¢ƒ
 categories: [general, Android]
 tags: [React Native, Android]
-description: ±¾ÎÄ½«½²ÊöÈçºÎÔÚWindowsÏÂ´î½¨React Native Android¿ª·¢»·¾³
+description: æœ¬æ–‡å°†è®²è¿°å¦‚ä½•åœ¨Windowsä¸‹æ­å»ºReact Native Androidå¼€å‘çŽ¯å¢ƒ
 comments: true
 ---
 
-# °²×°JDK
+# å®‰è£…JDK
 
-´Ó[Java¹ÙÍøÖ®JDKÏÂÔØÁÐ±í](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)ÏÂÔØJDK²¢°²×°¡£Çë×¢ÒâÑ¡Ôñx86»¹ÊÇx64°æ±¾¡£½«JDKµÄbinÄ¿Â¼¼ÓÈëµ½ÁËÏµÍ³PATH»·¾³±äÁ¿¡£×¢Òâ£ºÏÂÔØÁ´½Ó²»ÄÜÖ±½ÓÊ¹ÓÃ£¬ÐèÒªÏÈ½ÓÊÜÐ­Òé£¨ÕâÀïÓÐ´æÈëcookies£©£¬¿ÉÒÔÍ¨¹ý[Java¹ÙÍøÖ®JDKÏÂÔØÁÐ±í](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)ÏÂÔØJDK¡£
+ä»Ž[Javaå®˜ç½‘ä¹‹JDKä¸‹è½½åˆ—è¡¨](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)ä¸‹è½½JDKå¹¶å®‰è£…ã€‚è¯·æ³¨æ„é€‰æ‹©x86è¿˜æ˜¯x64ç‰ˆæœ¬ã€‚å°†JDKçš„binç›®å½•åŠ å…¥åˆ°äº†ç³»ç»ŸPATHçŽ¯å¢ƒå˜é‡ã€‚æ³¨æ„ï¼šä¸‹è½½é“¾æŽ¥ä¸èƒ½ç›´æŽ¥ä½¿ç”¨ï¼Œéœ€è¦å…ˆæŽ¥å—åè®®ï¼ˆè¿™é‡Œæœ‰å­˜å…¥cookiesï¼‰ï¼Œå¯ä»¥é€šè¿‡[Javaå®˜ç½‘ä¹‹JDKä¸‹è½½åˆ—è¡¨](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)ä¸‹è½½JDKã€‚
 
-ÉèÖÃ»·¾³±äÁ¿PATH£ºjdkµÄÎ»ÖÃ¡£ÀýÈç£º£¨PATH => C:\Program Files\Java\jdk1.8.0_11£©
+è®¾ç½®çŽ¯å¢ƒå˜é‡PATHï¼šjdkçš„ä½ç½®ã€‚ä¾‹å¦‚ï¼šï¼ˆPATH => C:\Program Files\Java\jdk1.8.0_11ï¼‰
 
-# °²×°Android SDK
+# å®‰è£…Android SDK
 
-µ¥¶À°²×°Android SDK£¬ÔÚÇ½µÄ»·¾³ÏÂ£¬ÎªÁËËÙ¶ÈÎÒÑ¡ÔñÁËÊ¹ÓÃ[AndroidDevTools](http://androiddevtools.cn/)¡£
+å•ç‹¬å®‰è£…Android SDKï¼Œåœ¨å¢™çš„çŽ¯å¢ƒä¸‹ï¼Œä¸ºäº†é€Ÿåº¦æˆ‘é€‰æ‹©äº†ä½¿ç”¨[AndroidDevTools](http://androiddevtools.cn/)ã€‚
 
-ÉèÖÃ»·¾³±äÁ¿ANDROID_HOME£ºAndroid SDK ManagerµÄÎ»ÖÃ ÀýÈç£º£¨PATH => C:\Program Files\Android SDK Tools£©
+è®¾ç½®çŽ¯å¢ƒå˜é‡ANDROID_HOMEï¼šAndroid SDK Managerçš„ä½ç½® ä¾‹å¦‚ï¼šï¼ˆPATH => C:\Program Files\Android SDK Toolsï¼‰
 
-ÉèÖÃ»·¾³±äÁ¿PATH£ºÀýÈç£º£¨PATH => %ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools£©
+è®¾ç½®çŽ¯å¢ƒå˜é‡PATHï¼šä¾‹å¦‚ï¼šï¼ˆPATH => %ANDROID_HOME%\tools;%ANDROID_HOME%\platform-toolsï¼‰
 
-# °²×°React-native-cli
+# å®‰è£…React-native-cli
 
 {% highlight bash %}
 npm install -g react-native-cli
 {% endhighlight bash %}
 
-# ³õÊ¼»¯ÏîÄ¿
+# åˆå§‹åŒ–é¡¹ç›®
 
 {% highlight bash %}
 react-native init reactNative
 {% endhighlight bash %}
-> Êä³ö
+> è¾“å‡º
 {% highlight bash %}
 This will walk you through creating a new React Native project in C:\dev\react
 Installing react-native package from npm...
