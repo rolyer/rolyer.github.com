@@ -121,6 +121,7 @@ Redirecting to /bin/systemctl start  nginx.service
 具体情况如下  1。本机能ping通虚拟机  2。虚拟机也能ping通本机  3。虚拟机能访问自己的web  4。本机无法访问虚拟己的web  这个问题的原因是服务器的80端口没有打开或防火墙没有关闭
 
 ## 解决办法:
+{% highlight bash %}
 如果是centos6:
 解决方法如下：
 /sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT
@@ -140,8 +141,10 @@ chkconfig –level 35 iptables off
 [root@rhel7 ~]# systemctl stop firewalld.service
 [root@rhel7 ~]# systemctl disable firewalld.service
 [root@rhel7 ~]# systemctl status firewalld.service
+{% endhighlight bash %}
 
 ## 扩展知识：
+{% highlight bash %}
 启动一个服务：systemctl start firewalld.service
 关闭一个服务：systemctl stop firewalld.service
 重启一个服务：systemctl restart firewalld.service
@@ -150,6 +153,7 @@ chkconfig –level 35 iptables off
 在开机时禁用一个服务：systemctl disable firewalld.service
 查看服务是否开机启动：systemctl is-enabled firewalld.service;echo $?
 查看已启动的服务列表：systemctl list-unit-files|grep enabled
+{% endhighlight bash %}
 
 # 第二种方式：通过手动下载安装包解压安装
 
