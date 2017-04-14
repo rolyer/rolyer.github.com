@@ -15,7 +15,8 @@ date +%z
 上面两个命令都可
 {% highlight bash %}
 [root@localhost ~]# date -R; date +%z  
-Fri, 19 Oct 2012 23:34:27 +0800  +0800 主要就是后面的+0800，东八区
+Fri, 28 Mar 2016 09:16:56 +0800
++0800
 {% endhighlight bash %}
 
 修改时区
@@ -31,8 +32,8 @@ BOIS时间：也叫硬件时间(hc)
 显示时间
 {% highlight bash %}
 [root@localhost ~]# date;hwclock -r  
-2012年 10月 19日 星期五 23:39:44 CST  
-2012年10月19日 星期五 23时39分45秒  -0.317993 seconds
+2016年 03月 28日 星期五 09:17:59 CST
+2016年03月28日 星期五 09时18分01秒  -1.029707 秒
 {% endhighlight bash %}
 
 ### 设置时间
@@ -45,7 +46,7 @@ date -s 23:40:00
 没有网络的情况下可以用这个
 ### 2、ntpdate
 {% highlight bash %}
-ntpdate time.windows.com && hwclock -w  
+ntpdate time.nist.gov && hwclock -w  
 {% endhighlight bash %}
 连网更新时间，如果成功，将系统时间，写入BOIS
 hwclock -w 或 hwclock --systohc
