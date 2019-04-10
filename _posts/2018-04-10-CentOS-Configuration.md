@@ -72,3 +72,24 @@ PermitRootLogin yes
 {% highlight bash %}
 PasswordAuthentication yes
 {% endhighlight bash %}
+
+4. 开启sshd服务
+{% highlight bash %}
+[root@localhost ~]# sudo service sshd start
+Redirecting to /bin/systemctl start sshd.service
+{% endhighlight bash %}
+
+检查sshd服务是否已经开启
+{% highlight bash %}
+[root@localhost ~]# ps -e | grep sshd
+  6769 ?        00:00:00 sshd
+ 19714 ?        00:00:00 sshd
+{% endhighlight bash %}
+
+检查22号端口是否开启监听
+{% highlight bash %}
+[root@localhost ~]# netstat -an | grep 22
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN     
+tcp        0      0 192.168.1.183:22        192.168.1.125:53975     ESTABLISHED
+tcp6       0      0 :::22                   :::*                    LISTEN   
+{% endhighlight bash %}
